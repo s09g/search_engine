@@ -8,10 +8,16 @@ import java.io.IOException;
 
 public class NGramLibraryBuilder {
     public static class NGramMapper extends Mapper <LongWritable, Text, Text, IntWritable>{
-        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-            Configuration conf = context.getConfiguration();
-            int noGram = conf.getInt("noGram", 5);
+        int noGram;
 
+        @Override
+        public void setup(Context context){
+            Configuration conf = context.getConfiguration();
+            noGram = conf.getInt("noGram", 5);
+        }
+
+        @Override
+        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String line = value.toString().trim().toLowerCase().replaceAll("[^a-z]", " ");//把非alphabetic的字符替换成空格
             String[] words = line.split("\\s+");
             if (words.length < 2){
