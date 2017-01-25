@@ -9,8 +9,8 @@
         <module name="ngram" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ngram" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="ngram" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
