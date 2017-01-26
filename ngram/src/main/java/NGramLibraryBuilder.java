@@ -1,3 +1,6 @@
+/**
+ * Created by zhangshiqiu on 2017/1/26.
+ */
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -25,7 +28,7 @@ public class NGramLibraryBuilder {
             }
 
             StringBuilder builder;
-            for (int i = 0; i < words.length; i++) {
+             for (int i = 0; i < words.length; i++) {
                 builder = new StringBuilder();
                 builder.append(words[i]);
                 for (int j = 1; i + j < words.length && j < noGram; j++) {
