@@ -84,6 +84,9 @@ public class LanguageModel {
                 int keyCount = iterator.next();
                 List<String> words = treeMap.get(keyCount);
                 for (String following_word: words){
+                    if (j >= topK){
+                        return;
+                    }
                     context.write(new DBOutputWritable(key.toString(), following_word, keyCount),
                                                         NullWritable.get());
                     j++;
