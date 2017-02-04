@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="logback-1.1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/logback-1.1.9" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/logback-1.1.9/logback-access/src/main/java" />
+      <root url="file://$PROJECT_DIR$/logback-1.1.9/logback-access/src/test/java" />
+      <root url="file://$PROJECT_DIR$/logback-1.1.9/logback-classic/src/main/java" />
+      <root url="file://$PROJECT_DIR$/logback-1.1.9/logback-classic/src/test/java" />
+      <root url="file://$PROJECT_DIR$/logback-1.1.9/logback-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/logback-1.1.9/logback-core/src/test/java" />
+      <root url="file://$PROJECT_DIR$/logback-1.1.9/logback-examples/src/main/java" />
+      <root url="file://$PROJECT_DIR$/logback-1.1.9" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/logback-1.1.9" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/logback-1.1.9" recursive="false" type="SOURCES" />
+  </library>
+</component>
