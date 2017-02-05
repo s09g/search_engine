@@ -39,23 +39,23 @@ public class UnitSum {
 
             context.write(key, new DoubleWritable(sum));
         }
+    }
 
-        public static void main(String[] args) throws Exception{
-            Configuration conf = new Configuration();
+    public static void main(String[] args) throws Exception{
+        Configuration conf = new Configuration();
 
-            Job job = Job.getInstance(conf);
+        Job job = Job.getInstance(conf);
 
-            job.setJarByClass(UnitSum.class);
-            job.setMapperClass(PassMapper.class);
-            job.setReducerClass(SumReducer.class);
-            job.setOutputKeyClass(Text.class);
-            job.setOutputValueClass(DoubleWritable.class);
+        job.setJarByClass(UnitSum.class);
+        job.setMapperClass(PassMapper.class);
+        job.setReducerClass(SumReducer.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(DoubleWritable.class);
 
-            FileInputFormat.addInputPath(job, new Path(args[0]));
-            FileOutputFormat.setOutputPath(job, new Path(args[1]));
-            job.waitForCompletion(true);
+        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        job.waitForCompletion(true);
 
-        }
     }
 
 }
