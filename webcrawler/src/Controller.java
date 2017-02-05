@@ -18,9 +18,9 @@ public class Controller {
         CrawlConfig config = new CrawlConfig();
         config.setCrawlStorageFolder(crawlStorageFolder);
 
-        config.setPolitenessDelay(1000);
-        config.setMaxDepthOfCrawling(2);
-        config.setMaxPagesToFetch(1000);
+        config.setPolitenessDelay(200);
+        config.setMaxDepthOfCrawling(16);
+        config.setMaxPagesToFetch(2000);
         config.setIncludeBinaryContentInCrawling(false);
         config.setResumableCrawling(false);
 
@@ -29,7 +29,8 @@ public class Controller {
         RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
         CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
 
-        controller.addSeed("http://www.viterbi.usc.edu/");
+        String urlForLA_Times = "http://www.latimes.com/";
+        controller.addSeed(urlForLA_Times);
         controller.start(MyCrawler.class, numberOfCrawlers);
     }
 }
