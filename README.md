@@ -12,7 +12,7 @@
 *	Implemented a multithreading web crawler based on crawler4j
 * implemented N Gram model in MapReduce and generated language model based on probability statistics, built AutoCompletion based on n-Gram statistics
 * computed PageRank in MapReduce
-* implemented Inverted Index 
+* implemented Inverted Index
 * deployed all programs on Hadoop
 
 
