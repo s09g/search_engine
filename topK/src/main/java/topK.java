@@ -16,6 +16,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  */
 public class topK {
     public static class topKMapper extends Mapper<Object, Document, Text, IntWritable> {
+        @Override
         public void map(Object key, Document value, Context context) throws IOException, InterruptedException {
             for (String word : value.content.split("\\s+")){
                 if (word.trim().length() > 0) {
@@ -26,5 +27,22 @@ public class topK {
         }
     }
 
-//    public static class topKReducer extends Reducer<Text, IntWritable>
+    public static class topKReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+        private int k;
+        @Override
+        public void setup(Context context){
+            Configuration configuration = context.getConfiguration();
+            k = configuration.getInt("k", 20);
+        }
+
+        @Override
+        public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException{
+
+        }
+
+        @Override
+        public void cleanup(Context context){
+
+        }
+    }
 }
