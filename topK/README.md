@@ -13,3 +13,7 @@ Disadvantages:
 Bloom Filter:
 + HashMap will have 3 different hash functions
 + Choose the lowest count from hashmap
+
+---
+* 根据文档信息去统计当前文档里面所有出现的单词出现在TOP50的热门词语。
+* 如果文档会不断更新，实现实时统计的方法，实时统计Top50的热门话题。

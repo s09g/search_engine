@@ -20,3 +20,4 @@
 *csci 572 Information Retrieval and Web Search Engines*
 
 *A semester project, starts from Jan, 2017 to present.*
+something not in this project: Error Metrics, Stop Words, Soundex algorithm, Porter's algorithm

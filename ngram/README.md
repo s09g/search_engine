@@ -1,7 +1,9 @@
 ## N-Gram Model
 
 + A real-time auto completion function on web page, as a searching hint for user
-+ Run two mapreduce jobs to build N Gram library and generated language model based on probability statistics; stored the result into MySQL
++ implemented N Gram model in MapReduce and generated language model based on probability statistics
++ built AutoCompletion based on n-Gram statistics
++ stored the result into MySQL
 
 ---
 
