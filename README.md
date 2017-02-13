@@ -5,7 +5,9 @@
 - [x] Page Rank
 - [ ] Top K
 - [x] Inverted Index
-- [ ] Recommend System
+- [x] <del>Recommend System <del/>
+
+<small>*Recommender System has been moved to another project*<small/>
 
 ---
 *	A well-functional search engine, including Web Crawler, Inverted index, PageRank and AutoComplete
