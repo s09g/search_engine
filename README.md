@@ -3,11 +3,10 @@
 - [x] AutoComplete (based on N Gram Model)
 - [ ] Web Crawler
 - [x] Page Rank
-- [ ] Top K
+- [x] Top K
 - [x] Inverted Index
-- [x] <del>Recommend System <del/>
+- [x] [Recommendation System](https://github.com/ZhangShiqiu1993/recommender_system)
 
-<small>*Recommender System has been moved to another project*<small/>
 
 ---
 *	A well-functional search engine, including Web Crawler, Inverted index, PageRank and AutoComplete

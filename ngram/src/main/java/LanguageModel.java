@@ -19,7 +19,7 @@ public class LanguageModel {
 			threashold = configuration.getInt("threashold", 20);
 		}
 
-		
+
 		@Override
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			if((value == null) || (value.toString().trim()).length() == 0) {
@@ -27,31 +27,31 @@ public class LanguageModel {
 			}
 			//this is cool\t20
 			String line = value.toString().trim();
-			
+
 			String[] wordsPlusCount = line.split("\t");
 			if(wordsPlusCount.length < 2) {
 				return;
 			}
-			
+
 			String[] words = wordsPlusCount[0].split("\\s+");
 
 			int count = Integer.valueOf(wordsPlusCount[1]);
 			if (count < threashold){
 			    return;
-            }
+      }
 
 			StringBuilder builder = new StringBuilder();
 			for (int i = 0; i < words.length - 1; i++) {
 			    builder.append(words[i]).append(" ");
-            }
+      }
 			String outputKey = builder.toString().trim();
 
             //this is --> cool = 20
 			builder.delete(0, builder.length());
 			builder.append(words[words.length-1]).append("=").append(count);
-            String outputValue = builder.toString().trim();
+      String outputValue = builder.toString().trim();
 
-            context.write(new Text(outputKey), new Text(outputValue));
+      context.write(new Text(outputKey), new Text(outputValue));
 		}
 	}
 
