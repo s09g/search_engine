@@ -126,7 +126,7 @@ def url_statistics(file):
         indicator = row["indicator"]
         if url not in url_set:
             url_set.add(url)
-            if indicator is "OK":
+            if indicator == "OK":
                 num_of_within += 1
             else:
                 num_of_outside += 1

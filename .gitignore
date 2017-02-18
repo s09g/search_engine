@@ -1,8 +1,0 @@
-/webcrawler/crawler4j-*.jar
-/webcrawler/logback-1.1.9/*
-/pageRank/.idea/*
-/ngram/.idea/*
-/webcrawler/.idea/*
-/invertedIndex/.idea/*
-/topK/.idea/*
-/recommendSystem/.idea/*
