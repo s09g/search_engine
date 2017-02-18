@@ -20,7 +20,7 @@ public class Controller {
 
         config.setPolitenessDelay(200);
         config.setMaxDepthOfCrawling(16);
-        config.setMaxPagesToFetch(100);
+        config.setMaxPagesToFetch(2000);
 
         config.setIncludeBinaryContentInCrawling(true);
         config.setResumableCrawling(false);

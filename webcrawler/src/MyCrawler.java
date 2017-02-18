@@ -5,6 +5,7 @@ import edu.uci.ics.crawler4j.url.WebURL;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 /**
@@ -31,6 +32,15 @@ public class MyCrawler extends WebCrawler {
             builder2 = new StringBuffer();
             builder3 = new StringBuffer();
 
+            builder1.append("\"url\",\"http status code\"\n");
+            fetch.write(builder1.toString());
+            builder1.setLength(0);
+
+            builder2.append("\"url\",\"size\",\"# of outlinks\",\"content type\"\n");
+            visit.write(builder2.toString());
+            builder2.setLength(0);
+
+            builder3.append("\"url\",\"indicator\"\n");
             builder3.append("\"").append(domain).append("\"").append(",")
                     .append("OK").append("\n");
             urls.write(builder3.toString());
@@ -54,8 +64,16 @@ public class MyCrawler extends WebCrawler {
             return false;
         }
 
-        return requirePatterns.matcher(href).matches() ||
-                referringPage.getContentType().contains("text/html");
+        String contentType = referringPage.getContentType();
+        if (contentType.contains("text/html")
+                || contentType.contains("image/gif")
+                || contentType.contains("image/jpeg")
+                || contentType.contains("image/png")
+                || contentType.contains("application/pdf")){
+            return true;
+        }
+
+        return requirePatterns.matcher(href).matches();
     }
 
     @Override

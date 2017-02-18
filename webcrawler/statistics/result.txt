@@ -1,0 +1,41 @@
+    1921
+      80
+       2
+       1
+       4
+
+Fetch
+num_of_fetches_attempted 2000
+num_of_fetches_succeeded 1921
+num_of_fetches_3xx 79
+num_of_fetches_4xx 0
+num_of_fetches_5xx 0
+
+Outgoing URL
+unique 23421
+num with 0
+num outside 23421
+
+Outgoing URL
+total extracted 136854
+
+File size:
+< 1KB 0
+1KB ~ <10KB 0
+10KB ~ <100KB 64
+100KB ~ <1MB 1825
+>= 1MB 31
+
+Content Type:
+text/html 1920
+gif 0
+jpeg 0
+png 0
+pdf 0
+
+Status
+200 OK
+301
+401
+403
+404
