@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
  * Created by zhangshiqiu on 2017/2/3.
  */
 public class MyCrawler extends WebCrawler {
-    private PrintWriter fetch, visit, urls;
-    private String domain ="http://www.latimes.com/";
+    static Writer fetch, visit, urls;
+    static String domain ="http://www.latimes.com/";
     private final static Pattern filters = Pattern.compile(
             ".*(\\.(txt|css|js|mid|mp2|mp3|mp4|wav|avi|mov|mpeg" +
                     "|ram|m4v|rm|smil|wmv|swf|wma|zip|rar|gz|xml))$");
@@ -20,33 +20,81 @@ public class MyCrawler extends WebCrawler {
     private static final Pattern requirePatterns = Pattern.compile(
             ".*(\\.(html|doc|pdf|bmp|gif|jpe?g|png|tiff?))$");
 
-    StringBuffer builder1, builder2, builder3;
-    @Override
-    public void onStart(){
-        try {
-            fetch = new PrintWriter(new File("./data/fetch_LATimes.csv"));
-            visit = new PrintWriter(new File("./data/visit_LATimes.csv"));
-            urls = new PrintWriter(new File("./data/urls_LATimes.csv"));
-            builder1 = new StringBuffer();
-            builder2 = new StringBuffer();
-            builder3 = new StringBuffer();
+    static Builder builder1, builder2, builder3;
 
-            builder1.append("\"url\",\"http status code\"\n");
-            fetch.write(builder1.toString());
-            builder1.setLength(0);
 
-            builder2.append("\"url\",\"size\",\"# of outlinks\",\"content type\"\n");
-            visit.write(builder2.toString());
-            builder2.setLength(0);
+    synchronized static Writer getFetch(){
+        if (fetch == null){
+            try {
+                fetch = new Writer(new PrintWriter(new File("./data/fetch_LATimes.csv")));
+            } catch (Exception e){
 
-            builder3.append("\"url\",\"indicator\"\n");
-            builder3.append("\"").append(domain).append("\"").append(",")
-                    .append("OK").append("\n");
-            urls.write(builder3.toString());
-            builder3.delete(0, builder3.length());
-        } catch (Exception e) {
-            e.printStackTrace();
+            }
         }
+        return fetch;
+    }
+
+    synchronized static Writer getVisit(){
+        if (visit == null){
+            try {
+                visit = new Writer(new PrintWriter(new File("./data/visit_LATimes.csv")));
+            } catch (Exception e){
+
+            }
+        }
+        return visit;
+    }
+
+    synchronized static Writer getUrls(){
+        if (urls == null){
+            try {
+                urls = new Writer(new PrintWriter(new File("./data/urls_LATimes.csv")));
+            } catch (Exception e){
+
+            }
+        }
+        return urls;
+    }
+
+    synchronized static Builder get1(){
+        if (builder1 == null){
+            try {
+                builder1 = new Builder(new StringBuffer());
+            } catch (Exception e){
+
+            }
+        }
+        return builder1;
+    }
+
+    synchronized static Builder get2(){
+        if (builder2 == null){
+            try {
+                builder2 = new Builder(new StringBuffer());
+            } catch (Exception e){
+
+            }
+        }
+        return builder2;
+    }
+    synchronized static Builder get3(){
+        if (builder3 == null){
+            try {
+                builder3 = new Builder(new StringBuffer());
+            } catch (Exception e){
+
+            }
+        }
+        return builder3;
+    }
+
+    public void onStart(){
+        fetch = MyCrawler.getFetch();
+        visit = MyCrawler.getVisit();
+        urls = MyCrawler.getUrls();
+        builder1 = MyCrawler.get1();
+        builder2 = MyCrawler.get2();
+        builder3 = MyCrawler.get3();
     }
 
     @Override
