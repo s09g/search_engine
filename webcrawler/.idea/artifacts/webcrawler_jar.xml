@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="webcrawler:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/webcrawler_jar</output-path>
+    <root id="archive" name="webcrawler.jar">
+      <element id="module-output" name="webcrawler" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/crawler4j-4.1-jar-with-dependencies.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/logback-1.1.9/logback-core-1.1.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/logback-1.1.9/logback-access-1.1.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/logback-1.1.9/logback-classic-1.1.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/logback-1.1.9/logback-core-1.1.9-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/logback-1.1.9/logback-access-1.1.9-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/logback-1.1.9/logback-classic-1.1.9-sources.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

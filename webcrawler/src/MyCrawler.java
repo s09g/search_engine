@@ -5,7 +5,6 @@ import edu.uci.ics.crawler4j.url.WebURL;
 
 import java.io.File;
 import java.io.PrintWriter;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 /**
@@ -66,9 +65,7 @@ public class MyCrawler extends WebCrawler {
 
         String contentType = referringPage.getContentType();
         if (contentType.contains("text/html")
-                || contentType.contains("image/gif")
-                || contentType.contains("image/jpeg")
-                || contentType.contains("image/png")
+                || contentType.contains("image")
                 || contentType.contains("application/pdf")){
             return true;
         }
