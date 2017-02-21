@@ -10,14 +10,14 @@ import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
 public class Controller {
     public static void main(String[] args) throws Exception {
         String crawlStorageFolder = "data/crawl";
-        int numberOfCrawlers = 3;
+        int numberOfCrawlers = 10;
 
         CrawlConfig config = new CrawlConfig();
         config.setCrawlStorageFolder(crawlStorageFolder);
 
         config.setPolitenessDelay(200);
         config.setMaxDepthOfCrawling(16);
-        config.setMaxPagesToFetch(20000);
+        config.setMaxPagesToFetch(200);
 
         config.setIncludeBinaryContentInCrawling(true);
         config.setResumableCrawling(false);
