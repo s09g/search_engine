@@ -1,2 +1,4 @@
 ## Web Crawler
-+ Build a single machine web crawler based on Crawler4j
++ Build a web crawler based on Crawler4j (java)
++ single machine
++ multi-threading
