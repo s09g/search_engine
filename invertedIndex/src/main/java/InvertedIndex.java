@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 /**
- * Created by zhangshiqiu on 2017/2/7.
+ * Created by zhangshiqiu on 2017/3/5.
  */
 public class InvertedIndex {
     public static void main(String[] args) throws Exception {
