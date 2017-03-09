@@ -43,8 +43,8 @@ public class UnitSum {
             //input format: Page\t PageRank
             //target: write to reducer
             String[] pageRank = value.toString().split("\t");
-            double betaRank = Double.parseDouble(pageRank[1]) * beta;
-            context.write(new Text(pageRank[0]), new DoubleWritable(betaRank));
+            // double betaRank = Double.parseDouble(pageRank[1]) * beta;
+            context.write(new Text(pageRank[0]), new DoubleWritable(beta));
 
         }
     }
