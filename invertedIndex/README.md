@@ -2,9 +2,7 @@
 + map each word to a set of index
 + each index represents a document which contains that keyword
 + increasing the query efficiency
-
----
-Feb 20th, 2017, just got a new data set with 386 MBs data file. Trying to deploy it on google cloud.
++ used data from [`Project Gutenberg`](https://www.gutenberg.org/)
 
 ---
 
