@@ -26,7 +26,6 @@ public class InvertedIndex {
             Text docID = new Text(id_content[0]);
             StringTokenizer tokenizer = new StringTokenizer(id_content[1]);
 
-
             while (tokenizer.hasMoreTokens()) {
                 word.set(tokenizer.nextToken());
                 context.write(word, docID);
