@@ -6,7 +6,7 @@
 - [x] Top K
 - [x] Inverted Index
 - [x] [Recommendation System](https://github.com/ZhangShiqiu1993/recommender_system)
-
+- [ ] Sentiment Analysis
 
 ---
 *	A well-functional search engine, including Web Crawler, Inverted index, PageRank and AutoComplete
