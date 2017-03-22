@@ -6,6 +6,10 @@ import java.io.*;
 
 /**
  * Created by zhangshiqiu on 2017/3/22.
+ *
+ * Based on the code from Internet.
+ * I changed it a little bit, to make it cooperate with my code.
+ *
  */
 public class JSONConverter {
     public static void main(String[] args) throws IOException, JSONException {
