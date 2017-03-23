@@ -14,11 +14,55 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 /**
  * Created by zhangshiqiu on 2017/3/22.
  */
 public class SentimentAnalysis {
+    public static class ArticleSplit extends Mapper<Object, Text, Text, IntWritable> {
+        private HashMap<String, String> emotinDict = new HashMap<>();
+
+        @Override
+        public void setup(Context context) throws IOException {
+            Configuration configuration = new Configuration();
+            String dict = configuration.get("dict", "");
+
+            BufferedReader reader = new BufferedReader((new FileReader(dict)));
+            String line = reader.readLine();
+
+            while (line != null) {
+                String[] word_emotion = line.split("\t");
+                emotinDict.put(word_emotion[0].trim().toLowerCase(), word_emotion[1].trim());
+                line = reader.readLine();
+            }
+            reader.close();
+        }
+
+        @Override
+        public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+            String fileName = ((FileSplit) context.getInputSplit()).getPath().getName();
+            String line = value.toString().trim();
+            StringTokenizer tokenizer = new StringTokenizer(line);
+            StringBuilder builder = new StringBuilder();
+            Text outputKey = new Text();
+            IntWritable one = new IntWritable(1);
+
+            while (tokenizer.hasMoreTokens()) {
+                String word = tokenizer.nextToken().trim().toLowerCase();
+                if (emotinDict.containsKey(word)){
+                    builder.append(fileName).append("\t").append(word);
+                    outputKey.set(builder.toString());
+                    context.write(outputKey, one);
+                    builder.setLength(0);
+                }
+            }
+        }
+    }
+
+
+
+
     // args[0] : input path
     // args[1] : output path
     // args[2] : path of emotion dictionary.
