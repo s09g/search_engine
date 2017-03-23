@@ -8,18 +8,21 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.util.hash.Hash;
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
  * Created by zhangshiqiu on 2017/3/22.
  */
 public class SentimentAnalysis {
-    public static class ArticleSplit extends Mapper<Object, Text, Text, IntWritable> {
+    public static class ArticleSplit extends Mapper<Object, Text, Text, Text> {
         private HashMap<String, String> emotinDict = new HashMap<>();
 
         @Override
@@ -43,31 +46,34 @@ public class SentimentAnalysis {
             String fileName = ((FileSplit) context.getInputSplit()).getPath().getName();
             String line = value.toString().trim();
             StringTokenizer tokenizer = new StringTokenizer(line);
-            StringBuilder builder = new StringBuilder();
-            Text outputKey = new Text();
-            IntWritable one = new IntWritable(1);
+            Text filename = new Text(fileName);
 
             while (tokenizer.hasMoreTokens()) {
                 String word = tokenizer.nextToken().trim().toLowerCase();
                 if (emotinDict.containsKey(word)){
-                    builder.append(fileName).append("\t").append(word);
-                    outputKey.set(builder.toString());
-                    context.write(outputKey, one);
-                    builder.setLength(0);
+                    context.write(filename, new Text(emotinDict.get(word)));
                 }
             }
         }
     }
 
-    public static class SentimentContentCollection extends Reducer<Text, IntWritable, Text, IntWritable>{
+    public static class SentimentContentCollection extends Reducer<Text, Text, Text, Text>{
         @Override
-        public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-            int sum = 0;
-            for (IntWritable value: values) {
-                sum += value.get();
+        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+            HashMap<String, Integer> map = new HashMap<>();
+            for (Text value: values) {
+                String emotion = value.toString();
+                int count = map.getOrDefault(emotion, 0) + 1;
+                map.put(emotion, count);
             }
-
-            context.write(key, new IntWritable(sum));
+            StringBuilder builder = new StringBuilder();
+            for (Map.Entry<String, Integer> entry : map.entrySet()){
+                String emotion = entry.getKey();
+                int count = entry.getValue();
+                builder.append(emotion).append("\t").append(count);
+                context.write(key, new Text(builder.toString()));
+                builder.setLength(0);
+            }
         }
     }
 
