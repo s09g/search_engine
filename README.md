@@ -9,13 +9,15 @@
 - [x] Sentiment Analysis
 
 ---
-*	A well-functional search engine, including Web Crawler, Inverted index, PageRank and AutoComplete
-*	Implemented a single machine web crawler based on crawler4j
-* Implemented N Gram statistics
-* Computed PageRank in MapReduce
+* A well-functional search engine, including Web Crawler, Inverted index, PageRank, AutoComplete, Recommandation System and Sentiment Analysis
+* Implemented a single machine web crawler based on crawler4j
+* Implemented AutoComplete based on N Gram statistics
+* Computed PageRank Algorithm
 * Implemented Inverted Index
 * Implemented top K algorithm
-* Deployed all programs on Hadoop
+* Implemented Recommendation System based on Item Based Collaborative Filtering Algorithm
+* Implemented Sentiment Analysis based on Emotion Feature Dictionary
+* All programs based on MapReduce and deployed on Google Cloud Dataproc
 
 
 ---
