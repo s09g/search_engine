@@ -7,6 +7,7 @@
 - [x] Inverted Index
 - [x] [Recommendation System](https://github.com/ZhangShiqiu1993/recommender_system)
 - [x] Sentiment Analysis
+- [ ] Compared With Solr
 
 ---
 * A well-functional search engine, including Web Crawler, Inverted index, PageRank, AutoComplete, Recommandation System and Sentiment Analysis
