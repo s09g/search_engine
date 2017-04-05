@@ -1,7 +1,7 @@
 ## Page Rank
 ---
-###demo
----
+### demo
+
 I collected around 20,000 web pages from LA Times based on my [web crawler](https://github.com/ZhangShiqiu1993/search_engine/tree/master/webcrawler). By extracting out links on each page, I built a network graph. I got 234702 edges in this graph, and also tried virtualized part of them.
 ---
 Here is first 1000 edges in the network graph.
