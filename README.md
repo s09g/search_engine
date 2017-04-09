@@ -1,5 +1,15 @@
 # Information search engine
+---
+### demo
 
+When I processing a query:
+
+![query](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/search.png?raw=true)
+
+Highlight the keyword
+![highlight](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/highlight.png?raw=true)
+
+---
 - [x] Web Crawler
 - [x] Links Extraction
 - [x] Page Rank
@@ -8,7 +18,7 @@
 - [x] Inverted Index
 - [x] [Recommendation System](https://github.com/ZhangShiqiu1993/recommender_system)
 - [x] Sentiment Analysis
-
+- [x] Front page
 
 ---
 * A well-functional search engine, including Web Crawler, Links Extraction, Inverted index, PageRank, AutoComplete, Recommandation System and Sentiment Analysis
