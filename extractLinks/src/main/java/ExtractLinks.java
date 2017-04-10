@@ -25,7 +25,6 @@ public class ExtractLinks {
             map.put(line[1], line[0]);
         }
 
-
         String webPageDirectoryPath = "/Users/zhangshiqiu/572/crawelData/";
         File edgeFile = new File("/Users/zhangshiqiu/572/edgeList.txt");
         Writer writer = new FileWriter(edgeFile);
@@ -35,7 +34,6 @@ public class ExtractLinks {
         for(File webpage : webPageDirecrory.listFiles()){
             String src = webpage.toString();
             Document doc = Jsoup.parse(webpage, "UTF-8", "http://www.latimes.com/");
-//            visited.clear();
             Elements links = doc.select("a[href]");
             for (Element link : links){
                 String dest = link.attr("href").trim();
@@ -45,10 +43,6 @@ public class ExtractLinks {
                 }
 
                 dest = map.get(dest);
-//                if (visited.contains(dest)){
-//                    continue;
-//                }
-//                visited.add(dest);
 
                 builder.setLength(0);
                 builder.append(src)
@@ -58,8 +52,6 @@ public class ExtractLinks {
                         .append('\n');
                 writer.write(builder.toString());
             }
-
         }
-
     }
 }
