@@ -19,6 +19,7 @@ Highlight the keyword
 - [x] [Recommender System](https://github.com/ZhangShiqiu1993/recommender_system)
 - [x] Sentiment Analysis
 - [x] Front page
+- [x] Spelling Correction 
 
 ---
 * A well-functional search engine, including Web Crawler, Links Extraction, Inverted index, PageRank, AutoComplete, Recommandation System and Sentiment Analysis
