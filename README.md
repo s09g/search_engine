@@ -16,7 +16,7 @@ Highlight the keyword
 - [x] AutoComplete (based on N Gram Model)
 - [x] Top K
 - [x] Inverted Index
-- [x] [Recommendation System](https://github.com/ZhangShiqiu1993/recommender_system)
+- [x] [Recommender System](https://github.com/ZhangShiqiu1993/recommender_system)
 - [x] Sentiment Analysis
 - [x] Front page
 
