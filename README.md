@@ -1,4 +1,5 @@
-# Information search engine
+# <img src="https://imgsa.baidu.com/baike/w%3D268/sign=1e68cddb36adcbef0134790094ae2e0e/8d5494eef01f3a29e33f21d19e25bc315c607c3e.jpg" width="32" height="32" /> HUAJI Search
+
 ---
 ### Search Engine Module
 
@@ -23,7 +24,7 @@
 * A well-functional search engine, including Web Crawler, Spelling Correction, Inverted index, PageRank Algorithm, TF-IDF Algorithm, AutoComplete, Recommender System and Sentiment Analysis
 * Implemented a single machine web crawler based on crawler4j
 * Extracted out-links from webpages collected by web crawler and computed PageRank scores
-* Parsed HTML pages, extracted content and computed TF-IDF
+* Parsed HTML pages, extracted content text and computed TF-IDF
 * Implemented N-Gram and generated language model, built real-time AutoCompletion based on N-Gram statistics
 * Implemented Inverted Index
 * Implemented top K algorithm
