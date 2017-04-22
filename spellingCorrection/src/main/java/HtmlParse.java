@@ -11,6 +11,8 @@ import org.apache.tika.sax.BodyContentHandler;
  */
 import org.xml.sax.SAXException;
 
+
+
 public class HtmlParse {
     private static Writer writer;
     public static void main(final String[] args) throws Exception {
