@@ -9,7 +9,6 @@
 - [x] TF-IDF
 - [x] N-Gram
 - [x] Top K
-- [ ] Distributed Indexer
 - [x] Inverted Index
 - [x] [Recommender System](https://github.com/ZhangShiqiu1993/recommender_system)
 - [x] Sentiment Analysis
@@ -19,19 +18,17 @@
 - [x] Auto Completion
 - [ ] Snippet
 
-
 ---
-* A well-functional search engine, including Web Crawler, Spelling Correction, Inverted index, PageRank Algorithm, TF-IDF Algorithm, AutoComplete, Recommender System and Sentiment Analysis
-* Implemented a single machine web crawler based on crawler4j
-* Extracted out-links from webpages collected by web crawler and computed PageRank scores
-* Parsed HTML pages, extracted content text and computed TF-IDF
-* Implemented N-Gram and generated language model, built real-time AutoCompletion based on N-Gram statistics
-* Implemented Inverted Index
-* Implemented top K algorithm
-* Implemented Recommendation System based on Item Based Collaborative Filtering Algorithm
-* Implemented Sentiment Analysis based on Emotion Feature Dictionary
-* Implemented Spelling Correction
-* Built front pages with PHP, Bootstrap and jQuery
+1. A well-functional search engine, including Web Crawler, Spelling Correction, Inverted index, PageRank Algorithm, TF-IDF Algorithm, AutoComplete, Recommender System and Sentiment Analysis
+2. **Web Crawler**: Implemented a multithreading web crawler based on *crawler4j*
+3. **Page Rank**: Extracted out-links from webpages collected by web crawler, built adjacent matrix from hyperlinks of each page, calculated *PageRank* based on page relation
+4. **TF-IDF**: Parsed HTML pages, extracted content text and computed *TF-IDF*
+5. **N-Gram**: generated language model, built real-time **AutoCompletion** based on N-Gram statistics
+6. **Recommender System**: built video rating matrix from dataset, calculated video co-occurrence matrix, based on **Item Collaborative Filtering** algorithm
+7. **Sentiment Analysis**: Extracted emotion feature from text and implemented sentiment analysis based on emotion dictionary
+8. Implemented **Top K** algorithm and **Inverted Index**, increased the query efficiency
+9. Implemented **Spelling Correction**
+10. UI: built front pages with *PHP, Bootstrap and jQuery*
 
 ---
 ### demo
