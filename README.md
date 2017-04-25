@@ -16,7 +16,7 @@
 - [x] Spelling Correction
 - [x] Language Identifier
 - [x] Auto Completion
-- [ ] Snippet
+- [x] Snippet
 
 ---
 1. A well-functional search engine, including Web Crawler, Spelling Correction, Inverted index, PageRank Algorithm, TF-IDF Algorithm, AutoComplete, Recommender System and Sentiment Analysis
