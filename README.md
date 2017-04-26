@@ -33,13 +33,15 @@
 ---
 ### demo
 
-**enter a query**
+**enter a query**<br/>
+the result will show up with docID, title, url, description and snippets
+![query_result](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/query_result.png?raw=true)
 
+**AutoCompletion**: give user query suggestions
+![auto_completion](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/auto_completion.png?raw=true)
 
-AutoCompletion: give user query suggestions
-
-
-Spelling Correction: When I mis-typing *California* as **californa**, it will aks "Are you looking for California"
-
+**Spelling Correction**: When I mis-typing *California* as **californa**, it will ask *"Are you looking for <u>California</u>"*
+![spelling_correction](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/spelling_correction.png?raw=true)
 
 We can click on the spelling correction hint. It will help us redirect to the correct word.
+![redirect](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/result_redirect.png?raw=true)
