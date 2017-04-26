@@ -33,11 +33,8 @@
 ---
 ### demo
 
-When I processing a query:
+**enter a query**
 ![query](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/query.png?raw=true)
-
-Highlight the keyword
-![highlight](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/query_highlight.png?raw=true)
 
 AutoCompletion: give user query suggestions
 ![AutoCompletion](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/autocomplete.png?raw=true)
