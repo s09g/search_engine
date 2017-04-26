@@ -34,13 +34,12 @@
 ### demo
 
 **enter a query**
-![query](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/query.png?raw=true)
+
 
 AutoCompletion: give user query suggestions
-![AutoCompletion](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/autocomplete.png?raw=true)
+
 
 Spelling Correction: When I mis-typing *California* as **californa**, it will aks "Are you looking for California"
-![spellcorrection](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/spellcorrection.png?raw=true)
+
 
 We can click on the spelling correction hint. It will help us redirect to the correct word.
-![redirect](https://github.com/ZhangShiqiu1993/search_engine/blob/master/demo/redirect.png?raw=true)
