@@ -1,0 +1,22 @@
+.input_container {
+    height: 30px;
+}
+
+.input_container ul {
+    width: 80%;
+    border: 1px solid #eaeaea;
+    position: absolute;
+    z-index: 9;
+    background: #f3f3f3;
+    list-style: none;
+}
+.input_container ul li {
+    padding: 2px;
+}
+.input_container ul li:hover {
+    color: white;
+    background: #4f6bb5;
+}
+#autocompletion {
+    display: none;
+}
