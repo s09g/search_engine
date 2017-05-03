@@ -1,3 +1,6 @@
 ## Sentiment Analysis
 
-* extracted emotion feature from text and implemented sentiment analysis based on emotion dictionary
++ Lexicon Based approach
++ Split text into smaller tokens (Tokenization)
++ Built Bags of Words Model
++ Calculated emotional values based on emotion dictionary
